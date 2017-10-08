@@ -38,7 +38,7 @@ public class Hangar extends Engine{
 				String model = kb.next();
 				System.out.println("Enter the range: ");
 				double range = kb.nextDouble();
-				System.out.println("Enter the price: ");
+				System.out.println("Enter the price (in millions): ");
 				double price = kb.nextDouble();
 				System.out.println("Enter the top speed in MPH: ");
 				double speed = kb.nextDouble();
@@ -52,12 +52,13 @@ public class Hangar extends Engine{
 	}
 	public void listFleet() {
 		System.out.println("Fleet " + this.name + ":");
-		for (Jets jets : fleet) {
-			if (jets == null) {
+		for (int j = 0; j < fleet.length; j++) {
+			if (fleet[j] == null) {
 				System.out.println("Empty");
 			}
 			else {
-				System.out.println(jets);
+				System.out.print(j + ": ");
+				System.out.println(fleet[j]);
 			}
 		}
 	}
