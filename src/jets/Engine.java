@@ -6,13 +6,15 @@ public class Engine {
 	static Scanner kb = new Scanner(System.in);
 	static Hangar alpha = new Hangar("alpha");
 	public static void main(String[] args) {
-		alpha.setFleet(0, 439, 18800000, 290, "A-10 Thunderbolt II");
-		alpha.setFleet(1, 1500, 150000000, 529, "F-22 Raptor");
-		alpha.setFleet(2, 1875, 31300000, 790, "F-15E Strike Eagle");
-		alpha.setFleet(3, 630, 737000000, 6900, "B-2 Spirit");
-		alpha.setFleet(4, 300, 132400000, 2530, "AC-130");
-		printMenu();
-		menuSelect(inputFilter(kb.next()));
+		alpha.setFleet(0, 439, 18.8, 290, "A-10 Thunderbolt II");
+		alpha.setFleet(1, 1500, 150.0, 529, "F-22 Raptor");
+		alpha.setFleet(2, 1875, 31.3, 790, "F-15E Strike Eagle");
+		alpha.setFleet(3, 630, 737.0, 6900, "B-2 Spirit");
+		alpha.setFleet(4, 300, 132.4, 2530, "AC-130");
+		while (true) {
+			printMenu();
+			menuSelect(inputFilter(kb.next()));
+		}
 	}
 	
 	public static void printMenu() {

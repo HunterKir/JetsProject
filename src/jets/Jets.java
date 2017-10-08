@@ -67,6 +67,24 @@ public class Jets extends Hangar {
 	public double machToMPH(double topSpeedMach) {
 		return topSpeedMach / 0.001303;
 	}
+
+	@Override
+	public String toString() {
+		StringBuilder builder = new StringBuilder();
+		builder.append("Jets [topSpeedMPH = ");
+		builder.append(topSpeedMPH);
+		builder.append(", price (in millions) = ");
+		builder.append(price);
+		builder.append(", range = ");
+		builder.append(range);
+		builder.append(", topSpeedMach = ");
+		builder.append(topSpeedMach);
+		builder.append(", name = ");
+		builder.append(name);
+		builder.append("]");
+		return builder.toString();
+	}
+	
 	
 	
 }

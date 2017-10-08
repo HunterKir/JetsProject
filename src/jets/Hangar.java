@@ -29,7 +29,7 @@ public class Hangar extends Engine{
 		for (int i = 0; i < fleet.length; i++) {
 			if (fleet[i] == null) {
 				System.out.println("Enter the model: ");
-				String model = kb.nextLine();
+				String model = kb.next();
 				System.out.println("Enter the range: ");
 				double range = kb.nextDouble();
 				System.out.println("Enter the price: ");
@@ -37,8 +37,9 @@ public class Hangar extends Engine{
 				System.out.println("Enter the top speed in MPH: ");
 				double speed = kb.nextDouble();
 				fleet[i] = new Jets(speed, price, range, model);
+				break;
 			}
-			else if (fleet[4] != null) {
+			else if (fleet[9] != null) {
 				System.out.println("This hangar is full!");
 			}
 		}
@@ -46,7 +47,12 @@ public class Hangar extends Engine{
 	public void listFleet() {
 		System.out.println("Fleet " + this.name + ":");
 		for (Jets jets : fleet) {
-			System.out.println(jets);
+			if (jets == null) {
+				System.out.println("Empty");
+			}
+			else {
+				System.out.println(jets);
+			}
 		}
 	}
 	
@@ -54,7 +60,10 @@ public class Hangar extends Engine{
 		double fastest = 0.0;
 		int index = 0;
 		for (int i = 0; i < fleet.length; i++) {
-			if (fleet[i].getTopSpeedMach() > fastest) {
+			if (fleet[i] == null) {
+				break;
+			}
+			else if (fleet[i].getTopSpeedMach() > fastest) {
 				fastest = fleet[i].getTopSpeedMach();
 				index = i;
 			}
@@ -66,7 +75,10 @@ public class Hangar extends Engine{
 		double longestRange = 0.0;
 		int index = 0;
 		for (int i = 0; i < fleet.length; i++) {
-			if (fleet[i].getRange() > longestRange) {
+			if (fleet[i] == null) {
+				break;
+			}
+			else if (fleet[i].getRange() > longestRange) {
 				longestRange = fleet[i].getRange();
 				index = i;
 			}
