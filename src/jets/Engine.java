@@ -37,7 +37,8 @@ public class Engine {
 				loop = false;
 			}
 			else if (num == 5) {
-				//exit
+				System.out.println("Exiting Program.");
+				System.exit(0);
 				loop = false;
 			}
 			else {
