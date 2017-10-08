@@ -1,7 +1,7 @@
 package jets;
 
 public class Jets extends Hangar {
-	private double topSpeed, price, range;
+	private double topSpeedMPH, price, range, topSpeedMach;
 	private String name;
 	
 	
@@ -20,19 +20,27 @@ public class Jets extends Hangar {
 		this.name = name;
 	}
 
-	public Jets(double topSpeed, double price, double range, String name) {
+	public Jets(double topSpeedMPH, double price, double range, String name) {
 		super();
-		this.topSpeed = topSpeed;
+		this.topSpeedMPH = topSpeedMPH;
 		this.price = price;
 		this.range = range;
 		this.name = name;
 	}
 
-	public double getTopSpeed() {
-		return topSpeed;
+	public double getTopSpeedMach() {
+		return topSpeedMach;
 	}
-	public void setTopSpeed(double topSpeed) {
-		this.topSpeed = topSpeed;
+
+	public void setTopSpeedMach(double topSpeedMach) {
+		this.topSpeedMach = topSpeedMach;
+	}
+
+	public double getTopSpeedMPH() {
+		return topSpeedMPH;
+	}
+	public void setTopSpeedMPH(double topSpeed) {
+		this.topSpeedMPH = topSpeed;
 	}
 	public double getPrice() {
 		return price;
@@ -52,7 +60,16 @@ public class Jets extends Hangar {
 	public void setName(String name) {
 		this.name = name;
 	}
-	
+	public void mphToMach(double topSpeedMPH) {
+		double result;
+		result = topSpeedMPH * 0.001303;
+		this.topSpeedMach = result;
+	}
+	public void machToMPH(double topSpeedMach) {
+		double result;
+		result = topSpeedMach / 0.001303;
+		this.topSpeedMPH = result;
+	}
 	
 	
 }
