@@ -3,6 +3,7 @@ package jets;
 public class Jets extends Hangar {
 	private double topSpeedMPH, price, range, topSpeedMach;
 	private String name;
+	private Pilot pilot;
 	
 	
 	public Jets() {
@@ -27,6 +28,14 @@ public class Jets extends Hangar {
 		this.range = range;
 		this.name = name;
 		this.topSpeedMach = mphToMach(topSpeedMPH);
+	}
+
+	public Pilot getPilot() {
+		return pilot;
+	}
+
+	public void setPilot(String name) {
+		this.pilot = new Pilot(name);
 	}
 
 	public double getTopSpeedMach() {
