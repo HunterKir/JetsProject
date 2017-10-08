@@ -34,8 +34,8 @@ public class Jets extends Hangar {
 		return pilot;
 	}
 
-	public void setPilot(String name) {
-		this.pilot = new Pilot(name);
+	public void setPilot(Pilot pilot) {
+		this.pilot = pilot;
 	}
 
 	public double getTopSpeedMach() {
@@ -90,6 +90,8 @@ public class Jets extends Hangar {
 		builder.append(topSpeedMach);
 		builder.append(", name = ");
 		builder.append(name);
+		builder.append(", pilot = ");
+		builder.append(pilot);
 		builder.append("]");
 		return builder.toString();
 	}

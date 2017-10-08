@@ -27,6 +27,11 @@ public class Engine {
 		pilots[12] = new Pilot("Airik");
 		pilots[13] = new Pilot("Ekubay");
 		pilots[14] = new Pilot("Rob");
+		alpha.assignPilot(0, pilots[(int)(14*Math.random())]);
+		alpha.assignPilot(1, pilots[(int)(14*Math.random())]);
+		alpha.assignPilot(2, pilots[(int)(14*Math.random())]);
+		alpha.assignPilot(3, pilots[(int)(14*Math.random())]);
+		alpha.assignPilot(4, pilots[(int)(14*Math.random())]);
 		while (true) {
 			printMenu();
 			menuSelect(inputFilter(kb.next()));

@@ -24,6 +24,9 @@ public class Hangar extends Engine{
 	public void setFleet(int idx, double speed, double price, double range, String model) {
 		this.fleet[idx] = new Jets(speed, price, range, model);
 	}
+	public void assignPilot(int idx, Pilot pilot) {
+		fleet[idx].setPilot(pilot);
+	}
 
 	public void addJet() {
 		for (int i = 0; i < fleet.length; i++) {
