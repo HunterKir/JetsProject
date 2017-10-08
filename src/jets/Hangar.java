@@ -27,6 +27,9 @@ public class Hangar extends Engine{
 	public void assignPilot(int idx, Pilot pilot) {
 		fleet[idx].setPilot(pilot);
 	}
+	public String displaySelection(int idx) {
+		return fleet[idx].getName();
+	}
 
 	public void addJet() {
 		for (int i = 0; i < fleet.length; i++) {

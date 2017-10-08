@@ -74,6 +74,17 @@ public class Engine {
 			}
 			else if (num == 5) {
 				//manage pilots
+				alpha.listFleet();
+				System.out.println("Which plane needs a new pilot?");
+				int idx = inputFilter(kb.next());
+				System.out.println("Which pilot will you assign?");
+				for (int i = 0; i < pilots.length; i++) {
+					System.out.println(i + ": " + pilots[i].getName());
+				}
+				int pilotIdx = inputFilter(kb.next());
+				alpha.assignPilot(idx, pilots[pilotIdx]);
+				System.out.println(pilots[pilotIdx].getName() + " has been assigned to " + alpha.displaySelection(idx));
+				loop = false;
 			}
 			else if (num == 6) {
 				System.out.println("Exiting Program.");
