@@ -26,6 +26,7 @@ public class Jets extends Hangar {
 		this.price = price;
 		this.range = range;
 		this.name = name;
+		this.topSpeedMach = mphToMach(topSpeedMPH);
 	}
 
 	public double getTopSpeedMach() {
@@ -60,15 +61,11 @@ public class Jets extends Hangar {
 	public void setName(String name) {
 		this.name = name;
 	}
-	public void mphToMach(double topSpeedMPH) {
-		double result;
-		result = topSpeedMPH * 0.001303;
-		this.topSpeedMach = result;
+	public double mphToMach(double topSpeedMPH) {
+		return topSpeedMPH * 0.001303;
 	}
-	public void machToMPH(double topSpeedMach) {
-		double result;
-		result = topSpeedMach / 0.001303;
-		this.topSpeedMPH = result;
+	public double machToMPH(double topSpeedMach) {
+		return topSpeedMach / 0.001303;
 	}
 	
 	

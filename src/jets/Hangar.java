@@ -1,9 +1,30 @@
 package jets;
 
 public class Hangar extends Engine{
-	private Jets fleet[] = new Jets[5];
+	private Jets fleet[] = new Jets[10];
 	private String name;
 	
+	
+	public Hangar() {
+		super();
+	}
+	
+	public Hangar(String name) {
+		super();
+		this.name = name;
+	}
+
+	public String getName() {
+		return name;
+	}
+
+	public void setName(String name) {
+		this.name = name;
+	}
+	public void setFleet(int idx, double speed, double price, double range, String model) {
+		this.fleet[idx] = new Jets(speed, price, range, model);
+	}
+
 	public void addJet() {
 		for (int i = 0; i < fleet.length; i++) {
 			if (fleet[i] == null) {
@@ -20,6 +41,12 @@ public class Hangar extends Engine{
 			else if (fleet[4] != null) {
 				System.out.println("This hangar is full!");
 			}
+		}
+	}
+	public void listFleet() {
+		System.out.println("Fleet " + this.name + ":");
+		for (Jets jets : fleet) {
+			System.out.println(jets);
 		}
 	}
 	

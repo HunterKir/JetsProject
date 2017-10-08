@@ -4,7 +4,15 @@ import java.util.Scanner;
 
 public class Engine {
 	static Scanner kb = new Scanner(System.in);
+	static Hangar alpha = new Hangar("alpha");
 	public static void main(String[] args) {
+		alpha.setFleet(0, 439, 18800000, 290, "A-10 Thunderbolt II");
+		alpha.setFleet(1, 1500, 150000000, 529, "F-22 Raptor");
+		alpha.setFleet(2, 1875, 31300000, 790, "F-15E Strike Eagle");
+		alpha.setFleet(3, 630, 737000000, 6900, "B-2 Spirit");
+		alpha.setFleet(4, 300, 132400000, 2530, "AC-130");
+		printMenu();
+		menuSelect(inputFilter(kb.next()));
 	}
 	
 	public static void printMenu() {
@@ -22,18 +30,22 @@ public class Engine {
 		while (loop) {
 			if (num == 1) {
 				// list fleet
+				alpha.listFleet();
 				loop = false;
 			}
 			else if (num == 2) {
 				//view fastest jet
+				alpha.findFastest();
 				loop = false;
 			}
 			else if (num == 3) {
 				//view longest range jet
+				alpha.findLongestRange();
 				loop = false;
 			}
 			else if (num == 4) {
 				//add a jet
+				alpha.addJet();
 				loop = false;
 			}
 			else if (num == 5) {
